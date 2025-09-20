@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./Style/bootstrap.min.css" />
+    <link rel="stylesheet" href="./Style/style.css" />
+  </head>
+
+  <body>
+    <button
+      class="btn lang-btn w-25 position-absolute top-0 right-0"
+      id="langToggle"
+    >
+      Arabic
+    </button>
+
+    <section
+      class="container-fluid cont d-flex justify-content-center align-items-center"
+    >
+      <div class="container main-box p-5 w-50">
+        <h1 class="text-center p-3 title" data-translate="register_title"></h1>
+        <div class="row mb-3">
+          <div class="col-sm-10 w-100">
+            <input
+              placeholder="First Name"
+              type="text"
+              class="form-control bg-transparent "
+              id="signupfirstname"
+              data-translate="register_first"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-sm-10 w-100">
+            <input
+              placeholder="Last Name"
+              type="text"
+              class="form-control bg-transparent "
+              id="signuplastname"
+              data-translate="register_last"
+            />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-10 w-100">
+            <input
+              placeholder="Email"
+              type="email"
+              class="form-control bg-transparent "
+              id="signupemail"
+              data-translate="register_email"
+            />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-10 w-100">
+            <input
+              placeholder="Password"
+              type="password"
+              class="form-control bg-transparent "
+              id="signuppassword"
+              data-translate="register_password"
+            />
+          </div>
+        </div>
+        <p class="text-danger text-center alertmsg"></p>
+        <button
+          type="submit"
+          class="btn sign-up-btn registration-btn w-100"
+          data-translate="register_signup"
+        ></button>
+
+        <p class="text-center mt-3">
+          <span data-translate="register_haveaccount"></span>
+          <a
+            class="sign-in-btn"
+            href="./index.html"
+            data-translate="register_signin"
+          ></a>
+        </p>
+      </div>
+    </section>
+    <script src="./JS/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./JS/register.js"></script>
+    <script type="module">
+      import { initLanguage } from "./JS/translations.js";
+      initLanguage();
+    </script>
+  </body>
+</html>

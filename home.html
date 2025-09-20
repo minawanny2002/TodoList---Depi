@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Pacifico&family=Poetsen+One&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/47273df362.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./Style/bootstrap.min.css" />
+    <link rel="stylesheet" href=".//Style/home.css" />
+  </head>
+
+  <body>
+    <div
+      class="container-fluid d-flex justify-content-around align-items-center nav-box p-3 position-absolute top-0"
+    >
+      <h5 class="me-5" data-translate="home_title"></h5>
+      <button
+        class="btn ms-5 logout-btn"
+        data-translate="home_logout"
+      ></button>
+      <button
+        class="btn lang-btn position-absolute"
+        id="langToggle"
+      >
+        Arabic
+      </button>
+    </div>
+
+    <section
+      class="Section-1 container-fluid d-flex flex-column justify-content-center align-items-center p-5 mt-5"
+    >
+      <h1
+        class="p-3 bookmarker position-relative mb-5"
+        data-translate="home_todo"
+      ></h1>
+      <div class="dotted-line mt-3"></div>
+    </section>
+
+    <section
+      class="Section-2 d-flex flex-column justify-content-center align-content-center"
+    >
+      <!-- Alert Modal -->
+      <div
+        class="modal fade"
+        id="subModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="circle bg-danger me-2"></div>
+              <div class="circle bg-warning me-2"></div>
+              <div class="circle bg-success me-2"></div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body p-4">
+              <h4>
+                Site Name or Url is not valid, Please follow the rules below :
+              </h4>
+              <div class="d-flex justify-content-start align-items-baseline">
+                <i class="fa-regular fa-circle-right me-2 mt-3"></i>
+                <h5>Site name must contain at least 3 characters</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="title d-flex justify-content-center align-items-center mb-3">
+        <i class="fa-solid fa-bookmark me-2"></i>
+        <h3 class="mt-1" data-translate="home_task_label"></h3>
+        <i class="fa-solid fa-bookmark ms-2"></i>
+      </div>
+
+      <div class="container p-5 d-flex flex-column">
+        <div class="mb-3">
+          <i class="fa-solid fa-book-bookmark me-2"></i>
+          <label
+            for="taskName"
+            class="form-label"
+            data-translate="home_task_label"
+            >Task</label
+          >
+          <input
+            placeholder="Enter Your Task"
+            type="text"
+            class="form-control"
+            id="taskDetails"
+            aria-describedby="emailHelp"
+            data-translate="home_task_placeholder"
+          />
+        </div>
+        <button
+          onclick="saveTask()"
+          type="submit"
+          id="subButton"
+          class="btn submit-button m-auto"
+          data-translate="home_submit"
+        ></button>
+      </div>
+    </section>
+
+    <section
+      class="Section-3 container d-flex flex-column justify-content-center align-items-center"
+    >
+      <div class="dotted-line mb-3"></div>
+      <div
+        class="d-flex flex-column justify-content-between align-items-center w-100 gap-4"
+      >
+        <div class="todo-table d-flex flex-column w-100">
+          <h3
+            class="text-center bookmarker position-relative"
+            data-translate="home_todo"
+          ></h3>
+          <table class="table table-striped text-center mt-3">
+            <thead>
+              <tr>
+                <th scope="col" data-translate="home_table_index"></th>
+                <th scope="col" data-translate="home_table_task"></th>
+                <th scope="col" data-translate="home_table_edit"></th>
+                <th scope="col" data-translate="home_table_delete"></th>
+                <th scope="col" data-translate="home_table_done"></th>
+              </tr>
+            </thead>
+            <tbody id="todoList"></tbody>
+          </table>
+        </div>
+        <div class="todo-table d-flex flex-column w-100">
+          <h3
+            class="text-center bookmarker position-relative"
+            data-translate="home_done"
+          ></h3>
+          <table class="table table-striped text-center mt-3">
+            <thead>
+              <tr>
+                <th scope="col" data-translate="home_table_index"></th>
+                <th scope="col" data-translate="home_table_task"></th>
+                <th scope="col" data-translate="home_table_delete"></th>
+              </tr>
+            </thead>
+            <tbody id="doneList"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <script src="./JS/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./JS/home.js"></script>
+    <script type="module">
+      import { initLanguage } from "./JS/translations.js";
+      initLanguage();
+    </script>
+  </body>
+</html>

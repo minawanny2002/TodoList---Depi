@@ -1,0 +1,45 @@
+body {
+    background-color: #f7ecde;
+}
+
+.title
+{
+    font-size: 60px;
+    color: #17a2b8;
+
+}
+.main-box {
+    box-shadow: -5px 2px 54px -9px rgba(0, 0, 0, 1);
+    background-color: #f7ecde;
+    
+}
+.cont{
+    height: 100vh;
+}
+.login-btn, .sign-up-btn
+{
+    border: 1px solid #17a2b8;
+    color: #17a2b8;
+}
+.login-btn:hover,  .sign-up-btn:hover
+{
+    background-color: #17a2b8;
+}
+.lang-btn
+{
+    border: 1px solid #17a2b8;
+    color: #17a2b8;
+}
+.lang-btn:hover
+{
+    background-color: #17a2b8;
+}
+    
+.main-box input::placeholder {
+    color: rgb(0, 0, 0);
+  }
+
+.sign-up-btn , .sign-in-btn
+{
+    cursor: pointer;
+}

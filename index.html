@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./Style/bootstrap.min.css" />
+    <link rel="stylesheet" href="./Style/style.css" />
+  </head>
+
+  <body>
+    <button class="btn lang-btn  w-25 position-absolute top-0 right-0" id="langToggle">Arabic</button>
+    <section
+      class="container-fluid cont d-flex justify-content-center align-items-center"
+    >
+      <div class="container main-box p-5 w-50">
+        <h1 class="text-center p-3 title" data-translate="signin_title"></h1>
+        <div class="row mb-3">
+          <div class="col-sm-10 w-100">
+            <input
+              placeholder="Enter your email"
+              type="email"
+              class="form-control bg-transparent "
+              id="signinmail"
+              data-translate="signin_email"
+            />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-10 w-100">
+            <input
+              placeholder="Enter your password"
+              type="password"
+              class="form-control bg-transparent "
+              id="signinpassword"
+              data-translate="signin_password"
+            />
+          </div>
+        </div>
+        <p class="text-danger text-center alertmsg-signin"></p>
+        <button
+          type="submit"
+          class="btn login-btn login-button w-100"
+          data-translate="signin_login"
+        ></button>
+
+        <p class="text-center mt-3">
+          <span data-translate="signin_noaccount"></span>
+          <a
+            class="sign-up"
+            href="./register.html"
+            data-translate="signin_signup"
+          ></a>
+        </p>
+      </div>
+    </section>
+    <script src="./JS/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./JS/main.js"></script>
+    <script type="module">
+      import { initLanguage } from "./JS/translations.js";
+      initLanguage();
+    </script>
+  </body>
+</html>
